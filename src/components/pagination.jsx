@@ -53,7 +53,9 @@ function Pagination({ totalPageCount, currentPage, onPageChange }) {
       {pages.map((page, index) => (
         <button
           key={index}
-          className={page === currentPage ? "active" : ""}
+          className={`${page === currentPage ? "active" : ""} ${
+            page === "..." ? "ellipsis" : ""
+          }`}
           onClick={() => handleClick(page)}
         >
           {page}
